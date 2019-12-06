@@ -1,7 +1,10 @@
 /*
+key with passphrase: privkey.pem
+pass: papa
+key without passphrase: key.pem
 openssl smime -encrypt -aes256 -in msg.eml -outform SMIME -out msg.p7m cert.pem
 openssl smime -decrypt -in msg.p7m -inform SMIME -inkey privkey.pem -out msg.dec
-pass: papa
+
 */
 
 var fs = require('fs');
@@ -15,7 +18,7 @@ var webcrypto = new crypto();
 
 let msgFile = fs.readFileSync('msg.p7m');
 let certFile = fs.readFileSync('cert.pem');
-let keyFile = fs.readFileSync('privkey.pem');
+let keyFile = fs.readFileSync('key.pem');
 
 pkijs.setEngine("newEngine", webcrypto, new pkijs.CryptoEngine({
   name: "",
