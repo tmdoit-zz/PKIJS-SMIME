@@ -1,0 +1,139 @@
+Received: from AM0PR01MB5827.eurprd01.prod.exchangelabs.com
+ (2603:10a6:208:aa::49) by AM0PR0102MB3122.eurprd01.prod.exchangelabs.com with
+ HTTPS via AM0PR06CA0072.EURPRD06.PROD.OUTLOOK.COM; Fri, 6 Dec 2019 15:33:29
+ +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=pass;
+ b=XC6cAtEoYJMzGJYNlggWgh+6TkD+qhW/9l3O/QwolOUSCohAD73UjABzFAachtPLxuSRqhUTcFtMFfSl7qYN7AssJ8BZoGvMtR6Xejw65TXdfouKwu6jql6iV+MEfN/uZjmqCOXG6Q1GoJUja6rS1gTQiSBewp5rgRwxzwqeNNZrwUnQ6+ft2nl3rmM0YzKyZajPJo6I8mzkc/QJpoGf97U9+T/klyA3S6hdzQ5LiSy2Bq/R56t0BMPvoKD9GjDKiQgW/xJJW8dO5SUNHTMsgRSWkqvBup4q3S6pq+63ky1tr5tm3/5sPNasmgDtklBNe2HR4fOsewhnOLgcGiEGPw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HC1xCXTPYR5y0/KVYr/oPtJzJt4Xh2RA/OIDCZnj8nc=;
+ b=FBKYj6Qabq5+LelhZi3mAHDkm4Jp4NTc7+xD0Ub76d5F/BRQJOnVkFpTrmC39kteMxkCTcbYTumMIG3YUwKf/LyUpyJANnkE1RkPwL4g6wmGYBHyHbQ3i3ALMbVqFU3vVU6w8qPggQ7EyuTdrS6sFiOJMetzkikiHPlMjlP09gN///0pAtw7uYe3REstJDHUUzMJSZdKoROAebO2JrBETMSiG9KpKvUVIgXgB6f5CixIWnY6spDhz9rwnJykUwpRPb/z5w/2qJIljCmo4C2HjFQKNtyBvMY5hYqjT1OunHOm7eAlLD6CW2FU2urIkyxUDhbmHI/Hv8aK+UivR9AnSg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 136.143.188.54) smtp.rcpttodomain=cortland.pl smtp.mailfrom=digitaloak.it;
+ dmarc=bestguesspass action=none header.from=digitaloak.it; dkim=pass
+ (signature was verified) header.d=digitaloak.it; arc=pass (0 oda=0 ltdi=0 93)
+Received: from HE1PR0102CA0021.eurprd01.prod.exchangelabs.com
+ (2603:10a6:7:14::34) by AM0PR01MB5827.eurprd01.prod.exchangelabs.com
+ (2603:10a6:208:156::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2495.22; Fri, 6 Dec
+ 2019 15:33:28 +0000
+Received: from VE1EUR02FT030.eop-EUR02.prod.protection.outlook.com
+ (2a01:111:f400:7e06::208) by HE1PR0102CA0021.outlook.office365.com
+ (2603:10a6:7:14::34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2516.13 via Frontend
+ Transport; Fri, 6 Dec 2019 15:33:28 +0000
+Authentication-Results: spf=pass (sender IP is 136.143.188.54)
+ smtp.mailfrom=digitaloak.it; cortland.pl; dkim=pass (signature was verified)
+ header.d=digitaloak.it;cortland.pl; dmarc=bestguesspass action=none
+ header.from=digitaloak.it;compauth=pass reason=109
+Received-SPF: Pass (protection.outlook.com: domain of digitaloak.it designates
+ 136.143.188.54 as permitted sender) receiver=protection.outlook.com;
+ client-ip=136.143.188.54; helo=sender4-of-o54.zoho.com;
+Received: from sender4-of-o54.zoho.com (136.143.188.54) by
+ VE1EUR02FT030.mail.protection.outlook.com (10.152.12.127) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2495.18 via Frontend Transport; Fri, 6 Dec 2019 15:33:27 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1575646404; cv=none; 
+    d=zohomail.com; s=zohoarc; 
+    b=OiPTEsNFyZT8wIIECpk08gKVJDx5bZMPstwHvl44qadlpsUSM7kHy7Yq2/G0DGG2ojm9ax1eL4Javw2E5mwQ8pKm4SOz/NLmfknVpOCvlIS6sxyZvR9vZPXTrwcKUFKwMfJV77jKd2+lZnOwx235mmnxjNmam/9OdZ/8sCJashQ=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+    t=1575646404; h=Content-Type:Date:From:MIME-Version:Message-ID:Subject:To; 
+    bh=HC1xCXTPYR5y0/KVYr/oPtJzJt4Xh2RA/OIDCZnj8nc=; 
+    b=ZiRw2MAC4MZeRrqf78iRW73WIb9Qp+vYoDU9zPbLXKr5LJyPiKi+TWi+dFI9xWVsYW5WhfvyJg1mCJyycE0aWsR/pR4+FveRmBLt7WBHsQuO2kao1EA5pQRkHBC2d3cDd4V1k/E11YrYInBM+QCF1E61kNIcEXFeI8AuY8+9Ywo=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+    dkim=pass  header.i=digitaloak.it;
+    spf=pass  smtp.mailfrom=tm@digitaloak.it;
+    dmarc=pass header.from=<tm@digitaloak.it> header.from=<tm@digitaloak.it>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1575646404;
+    s=zoho; d=digitaloak.it; i=tm@digitaloak.it;
+    h=Date:From:To:Message-Id:Subject:MIME-Version:Content-Type;
+    bh=HC1xCXTPYR5y0/KVYr/oPtJzJt4Xh2RA/OIDCZnj8nc=;
+    b=Sic/0sn/JhqKJ6tnlcx4LD4O0EwAS/QKzDTWL9vjT6vJfvC0gJ5te6VkdEjSp+N5
+    AZVdzwUYo8s7Ki5gx16Iai0eydhSI5YnWsxolXafQKGrtlZvmXluCOaescJpUskdZBW
+    Q5Mk3O7eTgJx8mxNJHyrR7ol3yY3xNZcLaLzOcd0=
+Received: from mail.zoho.com by mx.zohomail.com
+    with SMTP id 1575646402250564.5856619533162; Fri, 6 Dec 2019 07:33:22 -0800 (PST)
+Date: Fri, 06 Dec 2019 16:33:22 +0100
+From: Tomasz Matejunas <tm@digitaloak.it>
+To: "tomaszmatejunas" <tomasz.matejunas@cortland.pl>
+Message-Id: <16edbd816c8.f9b2bcea596647.7551146026594006391@digitaloak.it>
+Subject: Test message
+Content-Type: multipart/alternative; 
+    boundary="----=_Part_1917749_1253880912.1575646402248"
+User-Agent: Zoho Mail
+X-Mailer: Zoho Mail
+Return-Path: tm@digitaloak.it
+X-MS-Exchange-Organization-ExpirationStartTime: 06 Dec 2019 15:33:28.3207
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 545f3611-f3ca-400c-062a-08d77a61a44e
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 8aa7a472-90dc-4a6a-ab33-84f7265b0371:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-Matching-Connectors:
+ 132201200083227750;(f1ecaf76-61d0-4da1-da06-08d748a347b4);()
+X-Forefront-Antispam-Report:
+ CIP:136.143.188.54;IPV:NLI;CTRY:US;EFV:NLI;SFV:NSPM;SFS:(189003)(199004)(53416004)(88526003)(564344004)(85226003)(2160300002)(36740500002)(71190400001)(3480700005)(15650500001)(58126008)(7116003)(75640400001)(356004)(221733001)(4006050)(33964004)(7596002)(36906005)(336012)(50226002)(246002)(5000100001)(2616005)(5660300002)(8676002)(1096003)(81686011)(86362001)(7636002)(26005)(36756003)(6916009);DIR:INB;SFP:;SCL:1;SRVR:AM0PR01MB5827;H:sender4-of-o54.zoho.com;FPR:;SPF:Pass;LANG:en;PTR:sender4-of-o54.zoho.com;MX:1;A:1;
+X-MS-Exchange-Organization-AuthSource:
+ VE1EUR02FT030.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 545f3611-f3ca-400c-062a-08d77a61a44e
+X-MS-TrafficTypeDiagnostic: AM0PR01MB5827:|AM0PR01MB5827:|AM0PR01MB5827:
+X-MS-Exchange-Transport-Forked: True
+X-MS-Oob-TLC-OOBClassifiers: OLM:1923;
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Dec 2019 15:33:27.8223
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 545f3611-f3ca-400c-062a-08d77a61a44e
+X-MS-Exchange-CrossTenant-Id: 8aa7a472-90dc-4a6a-ab33-84f7265b0371
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR01MB5827
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.8269868
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.2516.000
+X-Microsoft-Antispam-Mailbox-Delivery:
+    ucf:0;jmr:0;ex:0;auth:0;dest:I;ENG:(20160514016)(750127)(520011016)(944506383)(944626516);
+X-Microsoft-Antispam-Message-Info:
+    =?utf-8?B?RHpVR2x0eHRzamhNa0pSYlJtcmNJM0FDWWJIL3NSdE1jaTh4Q3FKMVJPM09N?=
+ =?utf-8?B?MytoU3hPcit2THpsTGJaNmVYMlMwMnRqUmc4Zm1IcHBNVmUzY0c3RC9MUXBM?=
+ =?utf-8?B?UUxkYW5Nd0FLOU9WcWVGSFpzcVZ6ODdKaXBnSWpwRzhHNzZDenRJa1dWNVlD?=
+ =?utf-8?B?ZkljL3dTWStHdjVXRHY3dWxpSk4xMHl6V1BiaDlIb3RnWVFReE8ydi9YdFRj?=
+ =?utf-8?B?emkxaVhhOTZ6dkY0cTB1enl0SGtYNURCTVVOdldGQkxESUtUdHVuV2JjNDZu?=
+ =?utf-8?B?TVBoNm8vMXd1SVlwZ0RPc3A3OWwrNlNNU3NMaHI0cExQUmJBZVN1eTNUQTJH?=
+ =?utf-8?B?TkF4VEtLWlV0aUVIY1M4MnRpVi8zVWtNVnAzTnpIQVlCd2J3cVJNOWxNVmNn?=
+ =?utf-8?B?L2p6VXJGY2taelYzU1lJWCtrWkZZWmRBSno1c1QzYzdXL0Y1a0ZKUTBjcVBi?=
+ =?utf-8?B?THplMS82OHNuM3c0UkVkNkI2ZWFkZ2x6QkRYSCt6dWlrSW42TjVMU2JOOVhK?=
+ =?utf-8?B?eFpaWW5jU3FUUlZyTkQxMGl2eHpIRHRDSU5jNmg2b0pYaHBOTWlCNUdySVVL?=
+ =?utf-8?B?RjRxYi9mN0hvMGRudlh3WE9YS0dnVU9Db0lxRnA2RmQzVGNsdGhCeG5LNndX?=
+ =?utf-8?B?ZmNqenpuSHQzbGc2QmhwU3BhM1JHcUh1RkpTbTR2VHlUSSt0UWRqbWJOeUNN?=
+ =?utf-8?B?U2FmRHJheGxBdmUwYUxIVXVmWHM2NllMOUdFOG5RajlyRlhZYi90SWxnRGs1?=
+ =?utf-8?B?QmJmdVNQMlY0QStwQWgrRjZjSUxES2tQenViT2dsYndSN2FGNGl0V3FUVmRG?=
+ =?utf-8?B?NkhJN3Ztc2RWTEticlBXQTkwc1I2ay9QY3J1THFTTkhkY2NJTFUyYVV6TUlM?=
+ =?utf-8?B?NW9wcUxqUDRUWWtVbkx2SHpyNlhkVzVXVWhvMlVCZkJucTB5UkloK0owK1Ba?=
+ =?utf-8?B?OE1yUmk2VUluMG5DdkFRSm4zUG0rOWx2SFpsbVA1TjM2SU5wYW9nNlB6bmhX?=
+ =?utf-8?B?cllLTkFBSlorVVBnT3pGMnlsMXZvSmJ5NDZ4OURmSGd6eFFORXR6OFlyREt3?=
+ =?utf-8?B?U0VkaU16N3V0dzN0S2tZZ0wweHphbWpwYWpxSi9GSk04dkpZNThUODh5K1gv?=
+ =?utf-8?B?dDYzcUtWWU1saTRua2x2QW1zNUhLTERJMjdEOWUyRXVKNjJndnY4WDNsVSty?=
+ =?utf-8?B?djgwQjJqTWtoRXk2SmxKbmdkdFEyb0ZQcm9XaHI0eG5WVk5uVzNKdVM5ZVdI?=
+ =?utf-8?B?M2Y2eUoweHpGTTBFdlVXbHUxL2p3bkJKU2NyZFVnNG9nVjhIckZYRGlYMHph?=
+ =?utf-8?B?RTRFUUpzbmg2U3pPVjVGTHRrREYrNTJNQ0h2S1dUUVN4djYwRWlCSUF3bUdB?=
+ =?utf-8?B?ZDlnOWw5aitOWkE9PQ==?=
+MIME-Version: 1.0
+
+------=_Part_1917749_1253880912.1575646402248
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+Body of test message
+------=_Part_1917749_1253880912.1575646402248
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;">Body of test message</div><br></body></html>
+------=_Part_1917749_1253880912.1575646402248--

@@ -1,0 +1,21 @@
+{
+  "name": "temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@peculiar/webcrypto": "^1.0.21",
+    "asn1js": "^2.0.26",
+    "atob": "^2.1.2",
+    "crypto": "^1.0.1",
+    "emailjs-mime-parser": "^2.0.7",
+    "fs": "0.0.1-security",
+    "pkijs": "^2.1.82",
+    "pvutils": "^1.0.17"
+  }
+}
